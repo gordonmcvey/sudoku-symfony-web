@@ -4,8 +4,85 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50f9c0973acafa44bb359f58b30b8e58",
+    "content-hash": "731bb9121c4c7d975335b3cf5a09c5a9",
     "packages": [
+        {
+            "name": "gordonmcvey/sudoku-php",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gordonmcvey/sudoku-php.git",
+                "reference": "82bed3cc8a60ec474792d5909fad232aac12aa3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gordonmcvey/sudoku-php/zipball/82bed3cc8a60ec474792d5909fad232aac12aa3a",
+                "reference": "82bed3cc8a60ec474792d5909fad232aac12aa3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.3.0"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^9.4",
+                "phpstan/phpstan": "^1.12",
+                "phpunit/phpunit": "^11.3",
+                "squizlabs/php_codesniffer": "^3.10"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gordonmcvey\\sudoku\\": "src/gordonmcvey/sudoku"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "gordonmcvey\\sudoku\\test\\": "tests/gordonmcvey/sudoku/test"
+                }
+            },
+            "scripts": {
+                "unittest": [
+                    "vendor/bin/phpunit ./tests/gordonmcvey/sudoku/test/unit"
+                ],
+                "integrationtest": [
+                    "vendor/bin/phpunit ./tests/gordonmcvey/sudoku/test/integration"
+                ],
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "phpcs": [
+                    "vendor/bin/phpcs"
+                ],
+                "lint": [
+                    "vendor/bin/phplint -c ./phplint.yaml.dist"
+                ],
+                "static": [
+                    "vendor/bin/phpstan"
+                ],
+                "all": [
+                    "@test",
+                    "@phpcs",
+                    "@lint",
+                    "@static"
+                ]
+            },
+            "license": [
+                "apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "gordonmcvey",
+                    "email": "email@example.com"
+                }
+            ],
+            "description": "Sudoku solver and generator in PHP",
+            "support": {
+                "source": "https://github.com/gordonmcvey/sudoku-php/tree/main",
+                "issues": "https://github.com/gordonmcvey/sudoku-php/issues"
+            },
+            "time": "2024-10-24T11:40:52+00:00"
+        },
         {
             "name": "psr/cache",
             "version": "3.0.0",
@@ -2416,12 +2493,12 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.2",
+        "php": ">=8.3",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
